@@ -1,0 +1,9 @@
+#bio::before,
+#example::before,
+#contact::before{
+display: block;
+content: " ";
+margin-top: -65px;
+height: 65px;
+visibility: hidden;
+}

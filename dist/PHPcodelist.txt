@@ -1,0 +1,134 @@
+#*************************************************************
+#Script to create Portfolio Database
+#Jacob		8/28/2020		I Made a database for my portfolio
+#*************************************************************
+
+DROP DATABASE IF EXISTS portfolio;
+CREATE DATABASE portfolio;
+USE portfolio;
+
+CREATE TABLE IF NOT EXISTS minions
+(
+employeeID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+first_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL
+
+);
+
+CREATE TABLE IF NOT EXISTS visitor
+(
+visitor_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+visitor_name VARCHAR(255) NOT NULL,
+visitor_email VARCHAR(255) NOT NULL,
+visitor_msg VARCHAR(255) NOT NULL,
+visit_date DATETIME NOT NULL,
+employeeID INT NOT NULL,
+FOREIGN KEY (employeeID) REFERENCES minions(employeeID)
+);
+
+#insert test data
+INSERT INTO minions
+	(first_name, last_name)
+VALUES
+	('Brad', 'Pitt'),
+	('Courage', 'TheDog'),
+	('Monster', 'Mash'),
+	('Kenny', 'Spenny'),	
+	('Jimmy', 'Neutron'),
+	('Jimmy', 'Kimmel'),	
+	('The', 'Sauce'),
+	('Orange', 'Juice'),	
+	('Sir', 'Dewsky'),
+	('Benedict', 'Cutcumber'),	
+	('Minee', 'Hanz'),
+	('Kalimba', 'Psy'),	
+	('Notes', 'Mckenzie'),
+	('Fluffle', 'Corndog'),	
+	('Cesar', 'Pizza'),
+	('Cobra', 'Stingy'),	
+	('Smelly', 'Chap'),
+	('Dice', 'Sanchez'),	
+	('Hulk', 'NotHogan'),
+	('Starship', 'Jefferson');
+
+#Insert test data into visitor
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('John Stamos', 'JohnActualStamos@ayyyyy.com', 'sup' ,'whats goin on here?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Dustin Hoffman', 'TheDuster@FakeEmail.com','yo', 'whats goin on over there?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Wendy FastFood', 'SquarePattys@thestoreplace.com','leave', 'No I wont tweet you', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Kanye Best', 'Kanye@Kanye.com','kanye', 'No I wont cover your song', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Alucard Transylvania', 'NotAVampireIPromise@ieatpeople.net','please?', 'Wheres the sandwich you owe me?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Cerberus Doggo', 'DemonDoggo@Styx.com','Bark', 'Bark', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Kaka KarrotCake', 'SuperSand@AlienBoi.com','Fight me', 'Wanna tussle homie?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Turkey Sandwich', 'ImSoHungry@Sandwich.com','Im Starving', 'Seriously Im really hungry, this isnt a joke anymore', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('WelcomeTo Applebees', 'ApplebeesOfficial@Applebees.net','hungry?', 'Want some steak and shrimp?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Arbys Maybe', 'WeHaveTheMeats@theMeats.com','Eat here', 'Why are you talking to wendys?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Ronald Macdonald', 'ChickenMacnugget@hungry.net','No eat here', 'We have dipping sauce', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Chikn Filet', 'Chikfilet@chikn.net','Chicken', 'Naw bro we got the better sauce', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Taco BellMan', 'BajaBlast@Taco.com','Tacos bruh', 'Naw man you want tacos', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Pizza Hut', 'CheezePizza@pizzahut.com','PIZZA', 'GET A PIZZA WITHOUT PINEAPPLE', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Herbert TheMovie', 'AnActualCAr@vroom.com','Vroom', 'VroomVroom?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Stomach Acid', 'Starving4real@helpme.com','I hear it', 'My chair is vibrating...', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Buffalo Wings', 'GarlicParmesian@Buffalo.com','Wings', 'Wings sound so good right now', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Dustin Hoffman', 'TheDuster@FakeEmail.com','', 'whats goin on over there?', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Baby Yoda', 'RealAntagonist@StartheWar.com','gogoo', 'Gaa Gaa', NOW(), 1);
+INSERT INTO visitor
+(visitor_name, visitor_email,visitor_sub, visitor_msg, visit_date, employeeID)
+VALUES
+('Rick Romano', 'MXCHost@mxc.com','Come back to us', 'Finally one that isnt food related', NOW(), 1);
