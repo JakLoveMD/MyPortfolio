@@ -1,10 +1,10 @@
 function validateForm() {
-  var name =  document.getElementById('name').value;
+  var name =  document.getElementById('visitor_name').value;
   if (name == "") {
       document.querySelector('.status').innerHTML = "Name cannot be empty";
       return false;
   }
-  var email =  document.getElementById('email').value;
+  var email =  document.getElementById('visitor_email').value;
   if (email == "") {
       document.querySelector('.status').innerHTML = "Email cannot be empty";
       return false;
@@ -15,15 +15,18 @@ function validateForm() {
           return false;
       }
   }
-  var subject =  document.getElementById('subject').value;
+  var subject =  document.getElementById('visitor_sub').value;
   if (subject == "") {
       document.querySelector('.status').innerHTML = "Subject cannot be empty";
       return false;
   }
-  var message =  document.getElementById('message').value;
+  var message =  document.getElementById('visitor_msg').value;
   if (message == "") {
       document.querySelector('.status').innerHTML = "Message cannot be empty";
       return false;
   }
   document.querySelector('.status').innerHTML = "Sending...";
+  
+  
 }
+
