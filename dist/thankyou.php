@@ -53,15 +53,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Thank You!</title>
-   Font Awesome 
+<!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-   Google Fonts Roboto 
+<!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-   Bootstrap core CSS 
+<!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-   Material Design Bootstrap 
+<!-- Material Design Bootstrap -->
   <link href="css/mdb-pro.min.css" rel="stylesheet">
-   Your custom styles (optional) 
+<!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <link href="css/graph.css">
@@ -69,7 +69,7 @@
 </head>
 <body class="black-skin">
 	
-	 Main layout 
+<!--Main layout -->
 <main>
 
 
