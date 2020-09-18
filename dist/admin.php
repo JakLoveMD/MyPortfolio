@@ -1,5 +1,9 @@
 <?php
-require_once('database.php');
+//Sept 18 2020: added some functions for employees and visitors
+
+require_once('./model/database.php');
+require_once('./model/employee.php');
+require_once('./model/visitor.php');
 // Get category ID
 if (!isset($employeeID)) {
     $employeeID = filter_input(INPUT_GET, 'employeeID', 
@@ -10,22 +14,9 @@ if (!isset($employeeID)) {
 }
 
 // Get all employees
-$query = 'SELECT * FROM minions
-                       ORDER BY employeeID';
-$statement = $db->prepare($query);
-$statement->execute();
-$employees = $statement->fetchAll();
-$statement->closeCursor();
-
+$employees = getEmployees();
 // Get employees for visitors
-$queryVisitors = 'SELECT * FROM visitor
-                  WHERE employeeID = :employeeID
-                  ORDER BY visitor_id';
-$statement3 = $db->prepare($queryVisitors);
-$statement3->bindValue(':employeeID', $employeeID);
-$statement3->execute();
-$visitors = $statement3->fetchAll();
-$statement3->closeCursor();
+$visitors = getVisitorbyEmp($employeeID);
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,7 @@
 <?php
     
+//Sept 18 2020: Added calls to database functions
+
     $visitor_name = filter_input(INPUT_POST, 'visitor_name');
     $visitor_email = filter_input(INPUT_POST, 'email');
     $visitor_sub = filter_input(INPUT_POST, 'subject');
@@ -27,20 +29,12 @@
                 echo "DB Error: " . $error_message; 
                 exit();
             }
+            require_once ('./model/database.php');
+            require_once ('./model/visitor.php');
 
-            // Add the product to the database  
-            $query = 'INSERT INTO visitor
-                         (visitor_name, visitor_email, visitor_sub, visitor_msg, visit_date, employeeID)
-                      VALUES
-                         (:visitor_name, :visitor_email, :visitor_sub, :visitor_msg, NOW(), 1)';
-            $statement = $db->prepare($query);
-            $statement->bindValue(':visitor_name', $visitor_name);
-            $statement->bindValue(':visitor_email', $visitor_email);
-            $statement->bindValue(':visitor_sub', $visitor_sub);
-            $statement->bindValue(':visitor_msg', $visitor_msg);
-            $statement->execute();
-            $statement->closeCursor();
-            /* echo "Fields: " . $visitor_name . $visitor_email . $visitor_msg; */
+            // Add the visitor to the database  
+//           
+            addVisitor($visitor_name, $visitor_email, $visitor_sub, $visitor_msg);
 
 }
 
@@ -82,6 +76,8 @@
             <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">THANK YOU FOR CONTACTING ME!</h1>
             <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">CLICK THE BUTTON BELOW TO RETURN TO THE HOME PAGE</h5>
              <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="index.html">Home</a>
+             <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">ADMINS CAN LOGIN HERE</h5>
+             <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="login.php">Admin</a>
           </div>
         </div>
       </div>
