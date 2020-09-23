@@ -1,6 +1,7 @@
 <?php
     
 //Sept 18 2020: Added calls to database functions
+//Sept 22 2020: Added static call to get DB()
 
     $visitor_name = filter_input(INPUT_POST, 'visitor_name');
     $visitor_email = filter_input(INPUT_POST, 'email');

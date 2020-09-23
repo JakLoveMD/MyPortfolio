@@ -1,5 +1,9 @@
 <?php
 //Sept 18 2020: added some functions for employees and visitors
+//Sept 23 2020: added require once for new util files
+
+require_once('./util/secure_conn.php');
+require_once('./util/valid_admin.php');
 
 require_once('./model/database.php');
 require_once('./model/employee.php');
@@ -53,14 +57,14 @@ $visitors = getVisitorbyEmp($employeeID);
         <div class="row mt-5">
           <div class="col-md-12 wow fadeIn mb-3">
             <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">DATABASE</h1>
-            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">CLICK THE BUTTON BELOW TO RETURN TO THE HOME PAGE</h5>
-             <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="index.html">Home</a>
-          </div>
-                     </div>
-        </div>
+<!--            <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">CLICK THE BUTTON BELOW TO RETURN TO THE HOME PAGE</h5>-->
+             <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="index.html">Home</a><a class="btn btn-light-blue btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="#employees">Employees</a> <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="#visitors">Visitors</a>
           </div>
           </div>
-    <div class="container flex-center text-center">
+          </div>
+          </div>
+          </div>
+    <div class="container flex-center text-center" id="employees">
             <div class="container" flex-center text-center>
                 
         <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn">Employees</h5>
@@ -68,7 +72,7 @@ $visitors = getVisitorbyEmp($employeeID);
         <ul class="list-group">
             <?php foreach ($employees as $employee) : ?>
             <li class="list-group-item"><a href=".?employeeID=<?php echo $employee['employeeID']; ?>">
-                    <?php echo $employee['first_name']; ?>
+                    <?php echo $employee['first_name']; ?> <?php echo $employee['last_name']; ?>
                 </a>
             </li>
             <?php endforeach; ?>
@@ -92,7 +96,7 @@ $visitors = getVisitorbyEmp($employeeID);
   </div>
   <!--/Card image-->
 
-  <div class="px-4">
+  <div class="px-4" id="visitors">
 
     <div class="table-wrapper">
       <!--Table-->
@@ -143,6 +147,52 @@ $visitors = getVisitorbyEmp($employeeID);
         </div>
       </div>
     </div>
+<footer class="page-footer font-small unique-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic" href="https://www.facebook.com/Jake.LoveMD" target="_blank">
+            <i class="fab fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x">
+			  </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic" href="https://www.linkedin.com/in/jacob-sutherland-03aa92129/" target="_blank">
+            <i class="fab fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x">
+			  </i>
+          </a><a class="li-ic" href="https://github.com/JakLoveMD" target="_blank">
+            <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> 
+			</i>
+          </a>
+			<a class="li-ic" href="https://www.youtube.com/channel/UCt_pKLA7bxvgy-SDq36Dtkw?view_as=subscriber" target="_blank">
+            <i class="fab fa-youtube fa-lg white-text mr-md-5 mr-3 fa-2x"> 
+			</i>
+          </a>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> JSutherland</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
 </main>
 </body>
 
