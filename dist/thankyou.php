@@ -77,8 +77,6 @@
             <h1 class="display-3 mb-2 wow fadeInDown" data-wow-delay="0.3s">THANK YOU FOR CONTACTING ME!</h1>
             <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">CLICK THE BUTTON BELOW TO RETURN TO THE HOME PAGE</h5>
              <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="index.html">Home</a>
-             <h5 class="text-uppercase mb-3 mt-1 font-weight-bold wow fadeIn" data-wow-delay="0.4s">ADMINS CAN LOGIN HERE</h5>
-             <a class="btn btn-indigo btn-lg wow fadeIn smooth-scroll" data-wow-delay="0.4s" href="login.php">Admin</a>
           </div>
         </div>
       </div>
